@@ -1,0 +1,43 @@
+---
+title: "R Markdown and Leaflet Project"
+author: "John R Ferguson"
+date: "February 3, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown and Leaflet Project
+
+Create a web page using R Markdown that features a map created with Leaflet.
+
+Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+
+Your webpage must contain the date that you created the document, and it must contain a map created with Leaflet. We would love to see you show off your creativity!
+
+```{r map}
+library(leaflet)
+library(shiny)
+
+my_map <- leaflet() %>% addTiles( ) 
+
+my_map <- my_map %>% addTiles( "Places I visited last summer" ) 
+
+my_map <- my_map %>% addMarkers(lat=35.09704, lng=-89.80689, popup="Germantown, TN")
+my_map <- my_map %>% addMarkers(lat=32.1636441, lng= -110.8493985, popup="Davis-Monthan, AZ")
+
+my_map <- my_map %>% addMarkers(lat=32.77917, lng= -106.1729, popup="White Sands National Monument")
+
+my_map <- my_map %>% addMarkers(lat=33.8121, lng= -117.919, popup="Disneyland")
+
+my_map <- my_map %>% addMarkers(lat=33.37373, lng= -117.5639,  popup="San Onofre State Beach")
+
+my_map <- my_map %>% addMarkers(lat=36.055, lng= -112.1224,  popup="Grand Canyon National Park")
+
+my_map <- my_map %>% addMarkers(lat=35.57733, lng= -110.7926,  popup="Painted Desert")
+
+my_map
+
+```
